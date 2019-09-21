@@ -27,9 +27,9 @@ Overview
     :alt: AppVeyor Build Status
     :target: https://ci.appveyor.com/project/jenswbe/python-melthon
 
-.. |requires| image:: https://requires.io/github/jenswbe/python-melthon/requirements.svg?branch=master
+.. |requires| image:: https://requires.io/github/JenswBE/python-melthon/requirements.svg?branch=master
     :alt: Requirements Status
-    :target: https://requires.io/github/jenswbe/python-melthon/requirements/?branch=master
+    :target: https://requires.io/github/JenswBE/python-melthon/requirements/?branch=master
 
 .. |version| image:: https://img.shields.io/pypi/v/melthon.svg
     :alt: PyPI Package latest release
