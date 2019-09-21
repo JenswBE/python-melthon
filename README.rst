@@ -56,7 +56,7 @@ Overview
 
 Minimalistic static site generator
 
-* Free software: MIT license
+* Free software: GNU GPLv3 license
 
 Installation
 ============
