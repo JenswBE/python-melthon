@@ -37,9 +37,7 @@ extlinks = {
 import sphinx_rtd_theme
 html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-html_theme_options = {
-    'githuburl': 'https://github.com/jenswbe/python-melthon/'
-}
+html_theme_options = {}
 
 html_use_smartypants = True
 html_last_updated_fmt = '%b %d, %Y'
