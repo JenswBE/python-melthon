@@ -1,14 +1,14 @@
 """This module glues all components together"""
 
+import distutils.dir_util as dir_util
 import logging
 import os
 import sys
-import distutils.dir_util as dir_util
 from pathlib import Path
 
+from melthon.data import get_yml_data
 from melthon.middleware import MWLoader
 from melthon.middleware import MWStep
-from melthon.data import get_yml_data
 from melthon.template import render_templates
 
 
