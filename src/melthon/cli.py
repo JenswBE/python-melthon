@@ -39,4 +39,4 @@ def main(verbose, middleware_dir, data_dir, templates_dir, static_dir, output_di
         logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.INFO)
 
     # Run core
-    core.main(middleware_dir)
+    core.main(middleware_dir, data_dir, templates_dir, static_dir, output_dir)

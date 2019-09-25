@@ -1,3 +1,7 @@
+# Custom
+tests/test_site/output
+
+# Python cache
 *.py[cod]
 __pycache__
 
