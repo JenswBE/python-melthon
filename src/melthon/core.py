@@ -28,9 +28,12 @@ def build(templates_path: Path, static_path: Path, data_path: Path, middleware_p
         exit(1)
 
     # Initial context
-    context = {
-        'data': get_yml_data(data_path)
-    }
+    context = {}
+    if data_path.is_dir():
+        logging.info('Loading YAML data files ...')
+        context['data'] = get_yml_data(data_path)
+    else:
+        logging.warning('Configured data folder "%s" doesn\'t exist. Skipping data load.', data_path)
 
     # Load middlewares
     mws = None
@@ -42,9 +45,11 @@ def build(templates_path: Path, static_path: Path, data_path: Path, middleware_p
         # Load middlewares
         mws = MWLoader(middleware_path)
     else:
-        logging.warning('Configured middleware folder "%s" doesn\'t exist. Skipping middleware execution.', middleware_path)
+        logging.warning('Configured middleware folder "%s" doesn\'t exist. Skipping middleware execution.',
+                        middleware_path)
 
     # Delete and recreate output folder
+    logging.info('Cleaning temporary and output folders ...')
     clean(output_path)
     output_path.mkdir(parents=True, exist_ok=True)
 
@@ -54,11 +59,15 @@ def build(templates_path: Path, static_path: Path, data_path: Path, middleware_p
         logging.debug('Context after middlewares "before" step: %s', repr(context))
 
     # Render pages
+    logging.info('Rendering pages ...')
     render_templates(templates_path, output_path, context)
 
     # Copy static assets to output
     if static_path.is_dir():
-        dir_util.copy_tree(static_path, output_path, update=True)
+        logging.info('Copying static assets to output ...')
+        static_dir = str(static_path.resolve())
+        output_dir = str(output_path.resolve())
+        dir_util.copy_tree(static_dir, output_dir, update=True)
     else:
         logging.warning('Configured static folder "%s" doesn\'t exist. Skipping copy to output.', static_path)
 
