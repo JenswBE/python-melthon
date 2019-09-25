@@ -13,7 +13,7 @@
 
     <h1>Vegetables</h1>
     <ul>
-        % for vegetable in data['vegetables']:
+        % for vegetable in vegetables:
             <li>${vegetable}</li>
         % endfor
     </ul>
