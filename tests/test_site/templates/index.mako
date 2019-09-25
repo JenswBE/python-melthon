@@ -10,4 +10,11 @@
             % endfor
         </ul>
     % endfor
+
+    <h1>Vegetables</h1>
+    <ul>
+        % for vegetable in data['vegetables']:
+            <li>${vegetable}</li>
+        % endfor
+    </ul>
 </%block>

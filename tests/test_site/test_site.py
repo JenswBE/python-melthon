@@ -3,11 +3,11 @@ from click.testing import CliRunner
 from melthon.cli import main
 
 
-def test_main_help():
+def test_main():
     runner = CliRunner()
     result = runner.invoke(main, [])
 
-    # Melthon should show help page
+    # assert result.output == '()\n'
     assert result.exit_code == 0
     print(result.stdout)
     print(result.exception)
