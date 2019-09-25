@@ -45,10 +45,10 @@ class Middleware(object):
 class MWLoader(object):
     """Class responsible for loading and executing the middlewares"""
 
-    def __init__(self, mw_folder):
+    def __init__(self, mw_path):
         self.middleware_chain = []
-        logging.debug('Looking for middleware under folder "%s"', mw_folder)
-        self.load_middleware(mw_folder)
+        logging.debug('Looking for middleware under folder "%s"', mw_path)
+        self.load_middleware(str(mw_path))
 
     def load_middleware(self, package):
         """Loads the chain of middlewares"""
@@ -67,12 +67,12 @@ class MWLoader(object):
                 for (_, mwc) in mw_classes:
                     # If the class is a subclass of middleware, add the middleware to the chain
                     if issubclass(mwc, Middleware) and (mwc is not Middleware):
-                        logging.debug('Found middleware %s,%s', mwc.__module__, mwc.__name__)
+                        logging.debug('Found middleware %s.%s', mwc.__module__, mwc.__name__)
                         self.middleware_chain.append(mwc())
 
     def execute_chain(self, step, context):
         """Executes the chain of middlewares"""
-        logging.info('Executing step "%s" of middleware', step.value)
+        logging.info('Executing step "%s" of middleware(s) ...', step.value)
         for mw in self.middleware_chain:
             logging.debug("Executing middleware %s", mw)
             context = mw.process(step, context)
