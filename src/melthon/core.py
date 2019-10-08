@@ -21,7 +21,8 @@ def clean(output_path: Path):
         logging.info('Output folder "%s" not found. Nothing deleted.', output_path)
 
 
-def build(templates_path: Path, static_path: Path, data_path: Path, middleware_path: Path, output_path: Path):
+def build(templates_path: Path, static_path: Path, data_path: Path, middleware_path: Path, output_path: Path,
+          pretty_urls: bool):
     # Check if mandatory templates_path exist
     if not templates_path.is_dir():
         logging.error('Configured templates folder "%s" doesn\'t exist', templates_path)
@@ -60,7 +61,7 @@ def build(templates_path: Path, static_path: Path, data_path: Path, middleware_p
 
     # Render pages
     logging.info('Rendering pages ...')
-    render_templates(templates_path, output_path, context)
+    render_templates(templates_path, output_path, context, pretty_urls)
 
     # Copy static assets to output
     if static_path.is_dir():

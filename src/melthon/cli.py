@@ -47,5 +47,7 @@ def clean(output_dir):
 @click.option('-d', '--data-dir', default='data', help='Directory which contains your YAML data files')
 @click.option('-m', '--middleware-dir', default='middleware', help='Directory which contains your custom middlewares')
 @click.option('-o', '--output-dir', default='output', help='Directory to which rendered templates will be saved')
-def build(templates_dir, static_dir, data_dir, middleware_dir, output_dir):
-    core.build(Path(templates_dir), Path(static_dir), Path(data_dir), Path(middleware_dir), Path(output_dir))
+@click.option('--pretty-urls/--no-pretty-urls', default=True,
+              help='Pretty url will generate folders with index files. E.g. python/index.html instead of python.html')
+def build(templates_dir, static_dir, data_dir, middleware_dir, output_dir, pretty_urls):
+    core.build(Path(templates_dir), Path(static_dir), Path(data_dir), Path(middleware_dir), Path(output_dir), pretty_urls)
