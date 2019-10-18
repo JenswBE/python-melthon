@@ -8,6 +8,7 @@ def render_templates(templates_path, output_path, context, pretty_urls):
     with tempfile.TemporaryDirectory() as tmp_dir:
         template_lookup = TemplateLookup(directories=[templates_path],
                                          module_directory=tmp_dir,
+                                         input_encoding='utf-8',
                                          output_encoding='utf-8',
                                          encoding_errors='replace')
 
