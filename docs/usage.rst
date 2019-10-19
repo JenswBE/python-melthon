@@ -9,7 +9,7 @@ A Melthon project has following folder structure.
 Folder names can be changed as option to the melthon command.
 
 templates
-  This is the only mandatory folder. It contains your Mako tempates (\*.mako) which
+  This is the only mandatory folder. It contains your Mako tempates (``*``.mako) which
 	will be rendered into HTML pages. This folder supports subfolders.
 	To prevent a file from rendering, like base template or reusable parts, name your
 	template `*.template.mako` or `*.part.mako`.
@@ -34,15 +34,11 @@ middleware
 
 		class Middleware1(Middleware):
 		    def before(self, context):
-
-						# Your custom code
-
+						# <YOUR CUSTOM CODE>
 		        return context
 
 				def after(self, context):
-
-						# Your custom code
-
+						# <YOUR CUSTOM CODE>
 		        return context
 
 	You can define multiple middlewares (classes) in the same file. Method `before`
