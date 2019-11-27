@@ -1,10 +1,12 @@
+import logging
 import tempfile
 from pathlib import Path
 
+from mako import exceptions
 from mako.lookup import TemplateLookup
 
 
-def render_templates(templates_path, output_path, context, pretty_urls):
+def render_templates(templates_path, output_path, context, render_exceptions, pretty_urls):
     with tempfile.TemporaryDirectory() as tmp_dir:
         template_lookup = TemplateLookup(directories=[templates_path],
                                          module_directory=tmp_dir,
@@ -48,4 +50,13 @@ def render_templates(templates_path, output_path, context, pretty_urls):
 
             # Render template
             with output_page.open('wb') as rendered_page:
-                rendered_page.write(template.render(**context))
+                if render_exceptions:
+                    try:
+                        rendered_page.write(template.render(**context))
+                    except:  # noqa: E722
+                        rendered_page.write(exceptions.html_error_template().render())
+                        logging.error("Error occurred! Check rendered output for more info.")
+                        exit(1)
+
+                else:
+                    rendered_page.write(template.render(**context))
