@@ -35,9 +35,9 @@ Overview
     :alt: PyPI Package latest release
     :target: https://pypi.org/project/melthon
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/jenswbe/python-melthon/v1.3.0.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/jenswbe/python-melthon/v1.4.0.svg
     :alt: Commits since latest release
-    :target: https://github.com/jenswbe/python-melthon/compare/v1.3.0...master
+    :target: https://github.com/jenswbe/python-melthon/compare/v1.4.0...master
 
 .. |wheel| image:: https://img.shields.io/pypi/wheel/melthon.svg
     :alt: PyPI Wheel

@@ -25,7 +25,7 @@ def read(*names, **kwargs):
 
 setup(
     name='melthon',
-    version='1.3.0',
+    version='1.4.0',
     license='GPLv3',
     description='Minimalistic static site generator',
     long_description='%s\n%s' % (
