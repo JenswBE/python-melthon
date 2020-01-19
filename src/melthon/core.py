@@ -15,8 +15,13 @@ from melthon.template import render_templates
 def clean(output_path: Path):
     """Deletes generated and temporary files"""
     if output_path.is_dir():
-        dir_util.remove_tree(output_path)
-        logging.debug('Removed output folder "%s"', output_path)
+        for sub in os.listdir(output_path):
+            sub_path = output_path / sub
+            if sub_path.is_dir():
+                dir_util.remove_tree(sub_path)
+            else:
+                os.remove(sub_path)
+        logging.debug('Cleaned output folder "%s"', output_path)
     else:
         logging.info('Output folder "%s" not found. Nothing deleted.', output_path)
 

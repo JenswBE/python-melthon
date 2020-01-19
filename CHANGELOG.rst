@@ -2,6 +2,14 @@
 Changelog
 =========
 
+1.3.1 (2020-01-19)
+------------------
+
+* Add Python 3.8 support
+* Drop Python 3.4 support
+* Don't remove output folder, but remove it's contents instead. Removing the
+folder would cause permission issues, when serving with a local web server for development.
+
 1.3.0 (2019-11-27)
 ------------------
 
