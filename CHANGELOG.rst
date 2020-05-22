@@ -2,6 +2,12 @@
 Changelog
 =========
 
+2.0.0 (2020-05-22)
+------------------
+
+* Simplify project by dropping support for all Python versions except for the current version (3.8)
+* Add support for repeated pages (e.g. events -> event details)
+  
 1.4.0 (2020-01-19)
 ------------------
 
