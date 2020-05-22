@@ -10,7 +10,7 @@ Overview
     * - docs
       - |docs|
     * - tests
-      - | |travis| |appveyor| |requires|
+      - | |requires|
         |
     * - package
       - | |version| |wheel| |supported-versions| |supported-implementations|
@@ -18,14 +18,6 @@ Overview
 .. |docs| image:: https://readthedocs.org/projects/python-melthon/badge/?style=flat
     :target: https://readthedocs.org/projects/python-melthon
     :alt: Documentation Status
-
-.. |travis| image:: https://api.travis-ci.org/jenswbe/python-melthon.svg?branch=master
-    :alt: Travis-CI Build Status
-    :target: https://travis-ci.org/jenswbe/python-melthon
-
-.. |appveyor| image:: https://ci.appveyor.com/api/projects/status/github/jenswbe/python-melthon?branch=master&svg=true
-    :alt: AppVeyor Build Status
-    :target: https://ci.appveyor.com/project/jenswbe/python-melthon
 
 .. |requires| image:: https://requires.io/github/JenswBE/python-melthon/requirements.svg?branch=master
     :alt: Requirements Status
@@ -70,28 +62,3 @@ Documentation
 
 
 https://python-melthon.readthedocs.io/
-
-
-Development
-===========
-
-To run the all tests run::
-
-    tox
-
-Note, to combine the coverage data from all the tox environments run:
-
-.. list-table::
-    :widths: 10 90
-    :stub-columns: 1
-
-    - - Windows
-      - ::
-
-            set PYTEST_ADDOPTS=--cov-append
-            tox
-
-    - - Other
-      - ::
-
-            PYTEST_ADDOPTS=--cov-append tox
