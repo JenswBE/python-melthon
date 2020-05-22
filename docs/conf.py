@@ -26,7 +26,7 @@ project = 'Melthon'
 year = '2019'
 author = 'Jens Willemsens'
 copyright = '{0}, {1}'.format(year, author)
-version = release = '1.4.0'
+version = release = '2.0.0'
 
 pygments_style = 'trac'
 templates_path = ['.']
