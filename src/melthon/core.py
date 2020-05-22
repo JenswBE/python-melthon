@@ -6,10 +6,10 @@ import os
 import sys
 from pathlib import Path
 
-from melthon.data import get_yml_data
+from melthon.data import get_yaml_data, load_yaml_file
 from melthon.middleware import MWLoader
 from melthon.middleware import MWStep
-from melthon.template import render_templates
+from melthon.template import process_templates
 
 
 def clean(output_path: Path):
@@ -37,9 +37,20 @@ def build(templates_path: Path, static_path: Path, data_path: Path, middleware_p
     context = {}
     if data_path.is_dir():
         logging.info('Loading YAML data files ...')
-        context['data'] = get_yml_data(data_path)
+        context['data'] = get_yaml_data(data_path)
     else:
         logging.warning('Configured data folder "%s" doesn\'t exist. Skipping data load.', data_path)
+
+    # Get repeat config
+    repeat_config = "repeat.yml"
+    repeat_path = Path(repeat_config)
+    if repeat_path.is_file():
+        logging.info('Config "repeat.yml" found, loading started')
+        context['repeat'] = load_yaml_file(repeat_path)
+        logging.info('Repeat config loaded. Count: %s', len(context['repeat']))
+    else:
+        context['repeat'] = {}
+        logging.warning('Config "repeat.yml" not found. Program will exit if any ".repeat" templates found')
 
     # Load middlewares
     mws = None
@@ -66,7 +77,7 @@ def build(templates_path: Path, static_path: Path, data_path: Path, middleware_p
 
     # Render pages
     logging.info('Rendering pages ...')
-    render_templates(templates_path, output_path, context, render_exceptions, pretty_urls)
+    process_templates(templates_path, output_path, context, render_exceptions, pretty_urls)
 
     # Copy static assets to output
     if static_path.is_dir():

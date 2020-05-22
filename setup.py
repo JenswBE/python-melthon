@@ -66,7 +66,8 @@ setup(
     install_requires=[
         'click',
         'pyyaml',
-        'mako'
+        'mako',
+        'dpath'
     ],
     extras_require={
     },
