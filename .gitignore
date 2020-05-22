@@ -1,4 +1,6 @@
 # Custom
+.vscode/settings.json
+env/
 tests/test_site/output
 
 # Python cache

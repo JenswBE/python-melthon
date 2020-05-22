@@ -15,8 +15,6 @@ include LICENSE
 include README.rst
 include PUBLISH.rst
 
-include tox.ini .travis.yml .appveyor.yml
-
 global-exclude *.py[cod] __pycache__/* *.so *.dylib
 
 prune tests/test_site/output
