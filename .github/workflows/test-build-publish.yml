@@ -39,6 +39,10 @@ jobs:
                   python -m pip install -U pip wheel
                   pip install -r requirements.txt
 
+            - name: Install melthon
+              run: |
+                  pip install .
+
             - name: Run unit tests
               run: |
                   python -m unittest
