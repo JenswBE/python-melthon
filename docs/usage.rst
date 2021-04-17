@@ -76,4 +76,4 @@ The whole item will be passed in variable ``page`` inside the template.
 **Tip**: To have an index page for your repeated pages, you can specify a template with the same name.
 E.g. ``events.mako`` and ``events.repeat.mako``
 
-You can check https://github.com/JenswBE/melthon-buurtwerk-zaventem if you want a real life example of repeated pages.
+You can check https://github.com/JenswBE/python-melthon/tree/master/tests/test_site if you want an example of repeated pages.
