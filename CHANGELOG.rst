@@ -2,6 +2,11 @@
 Changelog
 =========
 
+2.1.0 (2020-04-21)
+------------------
+
+* Refresh project by adding support for Docker, improving unit tests and freezing dependencies
+
 2.0.0 (2020-05-22)
 ------------------
 
