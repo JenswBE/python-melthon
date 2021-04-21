@@ -19,9 +19,9 @@ Overview
     :target: https://readthedocs.org/projects/python-melthon
     :alt: Documentation Status
 
-.. |requires| image:: https://requires.io/github/JenswBE/python-melthon/requirements.svg?branch=master
+.. |requires| image:: https://requires.io/github/JenswBE/python-melthon/requirements.svg?branch=main
     :alt: Requirements Status
-    :target: https://requires.io/github/JenswBE/python-melthon/requirements/?branch=master
+    :target: https://requires.io/github/JenswBE/python-melthon/requirements/?branch=main
 
 .. |version| image:: https://img.shields.io/pypi/v/melthon.svg
     :alt: PyPI Package latest release
@@ -29,7 +29,7 @@ Overview
 
 .. |commits-since| image:: https://img.shields.io/github/commits-since/jenswbe/python-melthon/v2.1.0.svg
     :alt: Commits since latest release
-    :target: https://github.com/jenswbe/python-melthon/compare/v2.1.0...master
+    :target: https://github.com/jenswbe/python-melthon/compare/v2.1.0...main
 
 .. |wheel| image:: https://img.shields.io/pypi/wheel/melthon.svg
     :alt: PyPI Wheel
