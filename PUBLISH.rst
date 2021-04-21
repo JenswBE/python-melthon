@@ -17,17 +17,21 @@ This document lists the steps required to publish a new version.
 
     bumpversion patch/minor/major
 
-5. Clean build folder with::
+5. Push commits and tag with::
+
+    git push --tag
+
+6. Clean build folder with::
 
     rm -rf build
     rm -rf src/*.egg-info
 
-6. Build project::
+7. Build project::
 
     python3 setup.py clean --all sdist bdist_wheel
 
-7. Upload to PyPI with::
+8. Upload to PyPI with::
 
     twine upload --skip-existing dist/*.whl dist/*.gz
 
-8. Create Release on Git
+9. Create Release on Git
