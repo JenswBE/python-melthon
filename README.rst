@@ -1,3 +1,10 @@
+====================================
+This project is no longer maintained
+====================================
+
+Currently I don't have a good alternative.
+Experimenting with static site generation using Golang in https://github.com/JenswBE/tuinfeestbeerse.be.
+
 ========
 Overview
 ========
